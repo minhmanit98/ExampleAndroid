@@ -67,9 +67,9 @@ public class ListViewMain extends Fragment {
                 String  itemValue    = (String) listView.getItemAtPosition(position);
 
                 // Show Alert
-                Toast.makeText(getContext(),
-                        itemValue + itemPosition , Toast.LENGTH_LONG)
-                        .show();
+//                Toast.makeText(getContext(),
+//                        itemValue + itemPosition , Toast.LENGTH_SHORT)
+//                        .show();
                 SelectFr = itemPosition;
                 RunSelectFr();
 
