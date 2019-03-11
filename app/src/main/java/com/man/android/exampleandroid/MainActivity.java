@@ -14,7 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.man.android.exampleandroid.Fragment.ButtonFragment;
+import com.man.android.exampleandroid.Fragment.CheckBoxFragment;
+import com.man.android.exampleandroid.Fragment.ListViewFragment;
+import com.man.android.exampleandroid.Fragment.PasswordFragment;
+import com.man.android.exampleandroid.Fragment.RadioButtonFragment;
+import com.man.android.exampleandroid.Fragment.RatingBarFragment;
 import com.man.android.exampleandroid.Fragment.TextBoxFragment;
+import com.man.android.exampleandroid.Fragment.ToggleButtonFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,10 +52,22 @@ public class MainActivity extends AppCompatActivity {
 
         ButtonFragment buttonFragment = new ButtonFragment();
         TextBoxFragment textBoxFragment = new TextBoxFragment();
+        PasswordFragment passwordFragment = new PasswordFragment();
+        CheckBoxFragment checkBoxFragment = new CheckBoxFragment();
+        ListViewFragment listViewFragment = new ListViewFragment();
+        RadioButtonFragment radioButtonFragment = new RadioButtonFragment();
+        ToggleButtonFragment toggleButtonFragment = new ToggleButtonFragment();
+        RatingBarFragment ratingBarFragment = new RatingBarFragment();
 
         switch (selectfr){
             case 0: fragment=buttonFragment; break;
             case 1: fragment=textBoxFragment; break;
+            case 2: fragment=passwordFragment; break;
+            case 3: fragment=checkBoxFragment; break;
+            case 4: fragment=listViewFragment; break;
+            case 5: fragment=radioButtonFragment; break;
+            case 6: fragment=toggleButtonFragment; break;
+            case 7: fragment=ratingBarFragment; break;
             case 100:fragment=listViewMain; break;
             default: fragment=listViewMain; break;
         }
@@ -81,9 +99,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
 
 }

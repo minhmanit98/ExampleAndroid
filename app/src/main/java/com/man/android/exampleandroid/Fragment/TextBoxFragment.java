@@ -31,7 +31,7 @@ public class TextBoxFragment extends Fragment {
         edittext = (EditText) view.findViewById(R.id.editText);
 
         button = (Button) view.findViewById(R.id.button_new);
-        Activity mainActivity = this.getActivity();
+        //Activity mainActivity = this.getActivity();
 
         button.setOnClickListener(new View.OnClickListener() {
 
