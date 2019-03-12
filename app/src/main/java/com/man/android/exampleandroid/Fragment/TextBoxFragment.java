@@ -9,23 +9,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.man.android.exampleandroid.MainActivity;
 import com.man.android.exampleandroid.R;
 
-public class ButtonFragment extends Fragment {
+public class TextBoxFragment extends Fragment {
+    EditText edittext;
     Button button;
+    //private MainActivity mainActivity;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.buttonfragment, container, false);
+        return inflater.inflate(R.layout.textboxfragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        button = (Button) view.findViewById(R.id.clickme);
+        edittext = (EditText) view.findViewById(R.id.editText);
 
+        button = (Button) view.findViewById(R.id.button_new);
         //Activity mainActivity = this.getActivity();
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -34,11 +39,13 @@ public class ButtonFragment extends Fragment {
             public void onClick(View arg0) {
 
                 Toast.makeText(getContext(),
-                        "Button clicked", Toast.LENGTH_SHORT)
+                        edittext.getText(), Toast.LENGTH_SHORT)
                         .show();
 
             }
 
         });
     }
+
+
 }
