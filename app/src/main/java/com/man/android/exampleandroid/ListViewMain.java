@@ -87,7 +87,6 @@ public class ListViewMain extends Fragment {
     }
     private void RunSelectFr() {
 
-
         this.mainActivity.initFragment(SelectFr);
     }
 }

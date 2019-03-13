@@ -1,17 +1,12 @@
 package com.man.android.exampleandroid;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.man.android.exampleandroid.Fragment.ButtonFragment;
 import com.man.android.exampleandroid.Fragment.CheckBoxFragment;
@@ -19,26 +14,36 @@ import com.man.android.exampleandroid.Fragment.ListViewFragment;
 import com.man.android.exampleandroid.Fragment.PasswordFragment;
 import com.man.android.exampleandroid.Fragment.RadioButtonFragment;
 import com.man.android.exampleandroid.Fragment.RatingBarFragment;
+import com.man.android.exampleandroid.Fragment.ShowCodeFragment;
 import com.man.android.exampleandroid.Fragment.TextBoxFragment;
 import com.man.android.exampleandroid.Fragment.ToggleButtonFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     ListViewMain listViewMain = new ListViewMain();
+    ShowCodeFragment showCodeFragment=new ShowCodeFragment();
 
     Button button;
-
+    Button button2;
+    public static int selected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button=(Button) findViewById(R.id.button);
+        button2=(Button) findViewById(R.id.button2);
         initFragment(100);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 replaceFragmentContent(listViewMain);
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragmentContent(showCodeFragment);
             }
         });
 
@@ -50,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment fragment = new Fragment();
 
+
         ButtonFragment buttonFragment = new ButtonFragment();
         TextBoxFragment textBoxFragment = new TextBoxFragment();
         PasswordFragment passwordFragment = new PasswordFragment();
@@ -58,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButtonFragment radioButtonFragment = new RadioButtonFragment();
         ToggleButtonFragment toggleButtonFragment = new ToggleButtonFragment();
         RatingBarFragment ratingBarFragment = new RatingBarFragment();
+
+
 
         switch (selectfr){
             case 0: fragment=buttonFragment; break;
@@ -72,19 +80,21 @@ public class MainActivity extends AppCompatActivity {
             default: fragment=listViewMain; break;
         }
 
-
+        selected=selectfr;
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         FragmentTransaction ft = fragmentManager.beginTransaction();
 
         ft.replace(R.id.container_body,fragment );
 
+
         ft.commit();
+
 
     }
 
 
-    protected void replaceFragmentContent(Fragment fragment) {
+    public void replaceFragmentContent(Fragment fragment) {
 
         if (fragment != null) {
 
@@ -97,6 +107,21 @@ public class MainActivity extends AppCompatActivity {
             ft.commit();
 
         }
+
+    }
+    public void RunFragment(Fragment fragment) {
+
+
+
+            FragmentManager fmgr = getSupportFragmentManager();
+
+            FragmentTransaction ft = fmgr.beginTransaction();
+
+            ft.replace(R.id.container_body, fragment);
+
+            ft.commit();
+
+
 
     }
 
