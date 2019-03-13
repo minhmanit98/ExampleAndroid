@@ -37,7 +37,23 @@ public class ListViewMain extends Fragment {
                 "ListView",
                 "Radio Buttons",
                 "Toggle Button",
-                "Rating Bar"
+                "Rating Bar",
+                "Spinner",
+                "Date Picker",
+                "Time Picker",
+                "Analog And Digital Clock",
+                "ProcessBar",
+                "Alart Dialog",
+                "Prompt Dialog",
+                "Toast Notification",
+                "ImageView",
+                "ImageButton",
+                "LinearLayoutVertical",
+                "LinearLayoutHorizontal",
+                "RelativeLayout",
+                "TableLayout",
+                "GridView",
+                "WebView"
         };
 
         // Define a new Adapter
