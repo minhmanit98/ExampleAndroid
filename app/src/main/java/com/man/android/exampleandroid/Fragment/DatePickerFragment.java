@@ -1,0 +1,105 @@
+package com.man.android.exampleandroid.Fragment;
+
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.man.android.exampleandroid.R;
+
+import java.util.Calendar;
+
+public class DatePickerFragment extends Fragment {
+    private TextView tvDisplayDate;
+    private DatePicker dpResult;
+    private Button btnChangeDate;
+
+    private int year;
+    private int month;
+    private int day;
+
+    static final int DATE_DIALOG_ID = 999;
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.datepickerfragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        setCurrentDateOnView();
+        addListenerOnButton();
+    }
+
+    // display current date
+    public void setCurrentDateOnView() {
+
+        tvDisplayDate = (TextView) getView().findViewById(R.id.tvDate);
+        dpResult = (DatePicker) getView().findViewById(R.id.dpResult);
+
+        final Calendar c = Calendar.getInstance();
+        year = c.get(Calendar.YEAR);
+        month = c.get(Calendar.MONTH);
+        day = c.get(Calendar.DAY_OF_MONTH);
+
+        // set current date into textview
+        tvDisplayDate.setText(new StringBuilder()
+                // Month is 0 based, just add 1
+                .append(month + 1).append("-").append(day).append("-")
+                .append(year).append(" "));
+
+        // set current date into datepicker
+        dpResult.init(year, month, day, null);
+
+    }
+
+    public void addListenerOnButton() {
+
+        btnChangeDate = (Button) getView().findViewById(R.id.btnChangeDate);
+
+        btnChangeDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // set date picker as current date
+                new DatePickerDialog(getContext(), datePickerListener,
+                        year, month, day).show();
+            }
+
+        });
+
+    }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener
+            = new DatePickerDialog.OnDateSetListener() {
+
+        // when dialog box is closed, below method will be called.
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            year = selectedYear;
+            month = selectedMonth;
+            day = selectedDay;
+
+            // set selected date into textview
+            tvDisplayDate.setText(new StringBuilder().append(month + 1)
+                    .append("-").append(day).append("-").append(year)
+                    .append(" "));
+
+            // set selected date into datepicker also
+            dpResult.init(year, month, day, null);
+
+        }
+    };
+
+}

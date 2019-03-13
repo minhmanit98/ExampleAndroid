@@ -12,6 +12,7 @@ import com.man.android.exampleandroid.Fragment.AlartDialogFragment;
 import com.man.android.exampleandroid.Fragment.AnalogAndDigitalClockFragment;
 import com.man.android.exampleandroid.Fragment.ButtonFragment;
 import com.man.android.exampleandroid.Fragment.CheckBoxFragment;
+import com.man.android.exampleandroid.Fragment.DatePickerFragment;
 import com.man.android.exampleandroid.Fragment.GridViewFragment;
 import com.man.android.exampleandroid.Fragment.ImageButtonFragment;
 import com.man.android.exampleandroid.Fragment.ImageViewFragment;
@@ -27,6 +28,7 @@ import com.man.android.exampleandroid.Fragment.RelativeLayoutFragment;
 import com.man.android.exampleandroid.Fragment.SpinnerFragment;
 import com.man.android.exampleandroid.Fragment.TableLayoutFragment;
 import com.man.android.exampleandroid.Fragment.TextBoxFragment;
+import com.man.android.exampleandroid.Fragment.TimePickerFragment;
 import com.man.android.exampleandroid.Fragment.ToastNotificationFragment;
 import com.man.android.exampleandroid.Fragment.ToggleButtonFragment;
 import com.man.android.exampleandroid.Fragment.WebViewFragment;
@@ -82,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
         GridViewFragment gridViewFragment = new GridViewFragment();
         WebViewFragment webViewFragment = new WebViewFragment();
 
+        TimePickerFragment timePickerFragment = new TimePickerFragment();
+        DatePickerFragment datePickerFragment = new DatePickerFragment();
+
         switch (selectfr){
             case 0: fragment=buttonFragment; break;
             case 1: fragment=textBoxFragment; break;
@@ -92,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             case 6: fragment=toggleButtonFragment; break;
             case 7: fragment=ratingBarFragment; break;
             case 8: fragment=spinnerFragment; break;
+            case 9: fragment=datePickerFragment;break;
+            case 10: fragment=timePickerFragment; break;
             case 11: fragment=analogAndDigitalClockFragment; break;
             case 12: fragment=processBarFragment; break;
             case 13: fragment=alartDialogFragment; break;
