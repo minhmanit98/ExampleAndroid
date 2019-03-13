@@ -24,13 +24,13 @@ import com.man.android.exampleandroid.Fragment.ProcessBarFragment;
 import com.man.android.exampleandroid.Fragment.PromptDialogFragment;
 import com.man.android.exampleandroid.Fragment.RadioButtonFragment;
 import com.man.android.exampleandroid.Fragment.RatingBarFragment;
-<<<<<<< HEAD
+
 import com.man.android.exampleandroid.Fragment.ShowCodeFragment;
-=======
+
 import com.man.android.exampleandroid.Fragment.RelativeLayoutFragment;
 import com.man.android.exampleandroid.Fragment.SpinnerFragment;
 import com.man.android.exampleandroid.Fragment.TableLayoutFragment;
->>>>>>> truong
+
 import com.man.android.exampleandroid.Fragment.TextBoxFragment;
 import com.man.android.exampleandroid.Fragment.TimePickerFragment;
 import com.man.android.exampleandroid.Fragment.ToastNotificationFragment;

@@ -19,9 +19,7 @@ import static com.man.android.exampleandroid.MainActivity.selected;
 
 public class ShowCodeFragment extends Fragment {
     Button btcode1;
-    Button btcode2;
     Button btxml1;
-    Button btxml2;
 
 
     @Nullable
@@ -49,8 +47,7 @@ public class ShowCodeFragment extends Fragment {
             default:  break;
         }
         btcode1= (Button) view.findViewById(R.id.btcode1);
-        btcode2= (Button) view.findViewById(R.id.btcode2);
-        btxml2= (Button) view.findViewById(R.id.btxml2);
+
         btxml1= (Button) view.findViewById(R.id.btxml1);
 
         btcode1.setOnClickListener(new View.OnClickListener() {
@@ -63,16 +60,7 @@ public class ShowCodeFragment extends Fragment {
             }
 
         });
-        btcode2.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View arg0) {
-
-
-
-            }
-
-        });
         btxml1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -83,16 +71,7 @@ public class ShowCodeFragment extends Fragment {
             }
 
         });
-        btxml2.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View arg0) {
-
-
-
-            }
-
-        });
     }
 
 }
