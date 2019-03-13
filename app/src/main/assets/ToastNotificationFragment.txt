@@ -8,28 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.man.android.exampleandroid.R;
 
-public class TextBoxFragment extends Fragment {
-    EditText edittext;
+public class ToastNotificationFragment extends Fragment {
     Button button;
-    //private MainActivity mainActivity;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.textboxfragment, container, false);
+        return inflater.inflate(R.layout.toastnotificationfragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        edittext = (EditText) view.findViewById(R.id.editText);
 
-        button = (Button) view.findViewById(R.id.button_new);
-        //Activity mainActivity = this.getActivity();
+        button = (Button) view.findViewById(R.id.buttonToast);
 
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -37,13 +32,9 @@ public class TextBoxFragment extends Fragment {
             public void onClick(View arg0) {
 
                 Toast.makeText(getContext(),
-                        edittext.getText(), Toast.LENGTH_SHORT)
-                        .show();
+                        "Button is clicked", Toast.LENGTH_SHORT).show();
 
             }
-
         });
     }
-
-
 }

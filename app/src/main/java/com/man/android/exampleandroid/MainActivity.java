@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         ToggleButtonFragment toggleButtonFragment = new ToggleButtonFragment();
         RatingBarFragment ratingBarFragment = new RatingBarFragment();
         SpinnerFragment spinnerFragment = new SpinnerFragment();
+        DatePickerFragment datePickerFragment = new DatePickerFragment();
+        TimePickerFragment timePickerFragment = new TimePickerFragment();
         AnalogAndDigitalClockFragment analogAndDigitalClockFragment = new AnalogAndDigitalClockFragment();
         ProcessBarFragment processBarFragment = new ProcessBarFragment();
         AlartDialogFragment alartDialogFragment = new AlartDialogFragment();
@@ -97,11 +99,6 @@ public class MainActivity extends AppCompatActivity {
         TableLayoutFragment tableLayoutFragment = new TableLayoutFragment();
         GridViewFragment gridViewFragment = new GridViewFragment();
         WebViewFragment webViewFragment = new WebViewFragment();
-
-        TimePickerFragment timePickerFragment = new TimePickerFragment();
-        DatePickerFragment datePickerFragment = new DatePickerFragment();
-
-
 
         switch (selectfr){
             case 0: fragment=buttonFragment; break;
