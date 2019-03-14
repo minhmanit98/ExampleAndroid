@@ -14,6 +14,7 @@
         android:layout_height="72dp"
         android:text="Click Here"
         android:id="@+id/button_new"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:theme="?attr/primaryButtonTheme"/>
 
 </LinearLayout>

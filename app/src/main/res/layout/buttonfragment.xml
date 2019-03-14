@@ -6,9 +6,11 @@
 
     <Button
         android:id="@+id/clickme"
-        android:layout_width="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click me" />
+        android:text="Click me"
+        android:theme="?attr/primaryButtonTheme"/>
 
 
 

@@ -1,12 +1,17 @@
 package com.man.android.exampleandroid;
 
+import android.app.ActionBar;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.man.android.exampleandroid.Fragment.AlartDialogFragment;
 import com.man.android.exampleandroid.Fragment.AnalogAndDigitalClockFragment;
@@ -44,27 +49,45 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     Button button2;
-    public static int selected;
+    String title="ExampleAndroid";
+    public static int selected=100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(title);
+
+
         setContentView(R.layout.activity_main);
         button=(Button) findViewById(R.id.button);
         button2=(Button) findViewById(R.id.button2);
         initFragment(100);
+        if(selected==100){
+            button2.setEnabled(false);
+        }else{
+            button2.setEnabled(true);
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 replaceFragmentContent(listViewMain);
+                selected=100;
+                if(selected==100){
+                    button2.setEnabled(false);
+                }else{
+                    button2.setEnabled(true);
+                }
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 replaceFragmentContent(showCodeFragment);
+                setTitle(title);
+
             }
         });
+
 
 
     }
@@ -101,36 +124,42 @@ public class MainActivity extends AppCompatActivity {
         WebViewFragment webViewFragment = new WebViewFragment();
 
         switch (selectfr){
-            case 0: fragment=buttonFragment; break;
-            case 1: fragment=textBoxFragment; break;
-            case 2: fragment=passwordFragment; break;
-            case 3: fragment=checkBoxFragment; break;
-            case 4: fragment=listViewFragment; break;
-            case 5: fragment=radioButtonFragment; break;
-            case 6: fragment=toggleButtonFragment; break;
-            case 7: fragment=ratingBarFragment; break;
-            case 8: fragment=spinnerFragment; break;
-            case 9: fragment=datePickerFragment;break;
-            case 10: fragment=timePickerFragment; break;
-            case 11: fragment=analogAndDigitalClockFragment; break;
-            case 12: fragment=processBarFragment; break;
-            case 13: fragment=alartDialogFragment; break;
-            case 14: fragment=promptDialogFragment; break;
-            case 15: fragment=toastNotificationFragment; break;
-            case 16: fragment=imageViewFragment; break;
-            case 17: fragment=imageButtonFragment; break;
-            case 18: fragment= linearLayoutFragment_vertical; break;
-            case 19: fragment= linearLayoutFragment_horizontal; break;
-            case 20: fragment=relativeLayoutFragment; break;
-            case 21: fragment=tableLayoutFragment; break;
-            case 22: fragment=gridViewFragment; break;
-            case 23: fragment=webViewFragment; break;
+            case 0: fragment=buttonFragment; title="Button"; break;
+            case 1: fragment=textBoxFragment; title="TextBox";  break;
+            case 2: fragment=passwordFragment; title="Password";  break;
+            case 3: fragment=checkBoxFragment; title="Button";  break;
+            case 4: fragment=listViewFragment;title="Button";   break;
+            case 5: fragment=radioButtonFragment;title="Button";  break;
+            case 6: fragment=toggleButtonFragment;title="Button";  break;
+            case 7: fragment=ratingBarFragment;title="Button";  break;
+            case 8: fragment=spinnerFragment;title="Button" ; break;
+            case 9: fragment=datePickerFragment;title="Button"; break;
+            case 10: fragment=timePickerFragment;title="Button";  break;
+            case 11: fragment=analogAndDigitalClockFragment;title="Button";  break;
+            case 12: fragment=processBarFragment;title="Button";  break;
+            case 13: fragment=alartDialogFragment;title="Button" ; break;
+            case 14: fragment=promptDialogFragment; title="Button";  break;
+            case 15: fragment=toastNotificationFragment;title="Button";  break;
+            case 16: fragment=imageViewFragment;title="Button";  break;
+            case 17: fragment=imageButtonFragment; title="Button";  break;
+            case 18: fragment= linearLayoutFragment_vertical;  title="Button";  break;
+            case 19: fragment= linearLayoutFragment_horizontal; title="Button";  break;
+            case 20: fragment=relativeLayoutFragment;  title="Button";  break;
+            case 21: fragment=tableLayoutFragment; title="Button";   break;
+            case 22: fragment=gridViewFragment; title="Button";  break;
+            case 23: fragment=webViewFragment; title="Button";   break;
 
-            case 100:fragment=listViewMain; break;
+            case 100:fragment=listViewMain; title="Button"; break;
             default: fragment=listViewMain; break;
         }
 
         selected=selectfr;
+        if(selected==100){
+            button2.setEnabled(false);
+        }else{
+            button2.setEnabled(true);
+        }
+        setTitle(title);
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         FragmentTransaction ft = fragmentManager.beginTransaction();
@@ -155,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
             ft.replace(R.id.container_body, fragment);
 
             ft.commit();
+            setTitle("ExampleAndroid");
 
         }
 
@@ -174,5 +204,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 }

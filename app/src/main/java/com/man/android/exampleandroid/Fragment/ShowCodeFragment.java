@@ -36,6 +36,10 @@ public class ShowCodeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
+
+
         switch (selected){
             case 0: codetxt="ButtonFragment.txt"; xmltxt="buttonfragment_xml.txt"; break;
             case 1: codetxt="TextBoxFragment.txt"; xmltxt="textboxfragment_xml.txt"; break;
@@ -69,6 +73,7 @@ public class ShowCodeFragment extends Fragment {
         btxml1= (Button) view.findViewById(R.id.btxml1);
 
         tvShowCode= (TextView) view.findViewById(R.id.tvShowCode);
+        ShowXml();
 
         btcode1.setOnClickListener(new View.OnClickListener() {
 
@@ -111,6 +116,22 @@ public class ShowCodeFragment extends Fragment {
 
         });
 
+    }
+
+    protected void ShowXml(){
+        String text= "";
+        try{
+            InputStream is = getActivity().getAssets().open(xmltxt);
+            int size= is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            text = new String(buffer);
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        tvShowCode.setText(text);
     }
 
 }
