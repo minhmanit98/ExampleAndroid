@@ -40,7 +40,7 @@ public class ActionActivity extends AppCompatActivity {
     ShowCodeFragment showCodeFragment=new ShowCodeFragment();
     ButtonFragment buttonFragment = new ButtonFragment();
 
-    Button button;
+
     Button button2;
     String title="ExampleAndroid";
     public static int selected=SelectFr;
@@ -53,7 +53,7 @@ public class ActionActivity extends AppCompatActivity {
 
 
 
-        button=(Button) findViewById(R.id.button);
+
         button2=(Button) findViewById(R.id.button2);
         initFragment(SelectFr);
         if(selected==100){
@@ -62,12 +62,7 @@ public class ActionActivity extends AppCompatActivity {
             button2.setEnabled(true);
         }
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

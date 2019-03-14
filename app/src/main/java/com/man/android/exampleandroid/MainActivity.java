@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     ListViewMain listViewMain = new ListViewMain();
     ShowCodeFragment showCodeFragment=new ShowCodeFragment();
 
-    Button button;
+
     Button button2;
     String title="ExampleAndroid";
     public static int selected=100;
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
-        button=(Button) findViewById(R.id.button);
+
         button2=(Button) findViewById(R.id.button2);
         RunFragment(listViewMain);
 //        initFragment(100);
