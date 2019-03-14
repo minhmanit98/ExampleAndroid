@@ -14,7 +14,7 @@ import com.man.android.exampleandroid.R;
 
 import java.io.InputStream;
 
-import static com.man.android.exampleandroid.MainActivity.selected;
+import static com.man.android.exampleandroid.ActionActivity.selected;
 
 
 public class ShowCodeFragment extends Fragment {

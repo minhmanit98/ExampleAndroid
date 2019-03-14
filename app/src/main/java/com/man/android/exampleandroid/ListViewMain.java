@@ -1,6 +1,7 @@
 package com.man.android.exampleandroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,8 +20,9 @@ import java.util.ArrayList;
 
 public class ListViewMain extends Fragment {
     ListView lv;
-    private MainActivity mainActivity;
-    int SelectFr;
+    private ActionActivity actionActivity;
+    public static int SelectFr=0;
+
     ItemAdapter adapter;
     ArrayList<Integer> idImages;
     ArrayList<String> nameList;
@@ -117,13 +119,15 @@ public class ListViewMain extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof MainActivity) {
-            this.mainActivity = (MainActivity) context;
+        if (context instanceof ActionActivity) {
+            this.actionActivity = (ActionActivity) context;
         }
     }
     private void RunSelectFr() {
 
-        this.mainActivity.initFragment(SelectFr);
+        Intent intent = new Intent(getActivity(),ActionActivity.class);
+        startActivity(intent);
+
     }
     public ArrayList<Integer> getList(){
         idImages = new ArrayList<>();
