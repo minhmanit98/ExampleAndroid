@@ -42,6 +42,7 @@ public class ActionActivity extends AppCompatActivity {
 
 
     Button button2;
+    Button button1;
     String title="ExampleAndroid";
     public static int selected=SelectFr;
 
@@ -55,6 +56,7 @@ public class ActionActivity extends AppCompatActivity {
 
 
         button2=(Button) findViewById(R.id.button2);
+        button1=(Button) findViewById(R.id.button1);
         initFragment(SelectFr);
         if(selected==100){
             button2.setEnabled(false);
@@ -68,6 +70,13 @@ public class ActionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RunFragment(showCodeFragment);
                 setTitle(title);
+
+            }
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
 
             }
         });
