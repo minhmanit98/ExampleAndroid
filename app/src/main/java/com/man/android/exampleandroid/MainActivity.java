@@ -127,30 +127,30 @@ public class MainActivity extends AppCompatActivity {
             case 0: fragment=buttonFragment; title="Button"; break;
             case 1: fragment=textBoxFragment; title="TextBox";  break;
             case 2: fragment=passwordFragment; title="Password";  break;
-            case 3: fragment=checkBoxFragment; title="Button";  break;
-            case 4: fragment=listViewFragment;title="Button";   break;
-            case 5: fragment=radioButtonFragment;title="Button";  break;
-            case 6: fragment=toggleButtonFragment;title="Button";  break;
-            case 7: fragment=ratingBarFragment;title="Button";  break;
-            case 8: fragment=spinnerFragment;title="Button" ; break;
-            case 9: fragment=datePickerFragment;title="Button"; break;
-            case 10: fragment=timePickerFragment;title="Button";  break;
-            case 11: fragment=analogAndDigitalClockFragment;title="Button";  break;
-            case 12: fragment=processBarFragment;title="Button";  break;
-            case 13: fragment=alartDialogFragment;title="Button" ; break;
-            case 14: fragment=promptDialogFragment; title="Button";  break;
-            case 15: fragment=toastNotificationFragment;title="Button";  break;
-            case 16: fragment=imageViewFragment;title="Button";  break;
-            case 17: fragment=imageButtonFragment; title="Button";  break;
-            case 18: fragment= linearLayoutFragment_vertical;  title="Button";  break;
-            case 19: fragment= linearLayoutFragment_horizontal; title="Button";  break;
-            case 20: fragment=relativeLayoutFragment;  title="Button";  break;
-            case 21: fragment=tableLayoutFragment; title="Button";   break;
-            case 22: fragment=gridViewFragment; title="Button";  break;
-            case 23: fragment=webViewFragment; title="Button";   break;
+            case 3: fragment=checkBoxFragment; title="CheckBox";  break;
+            case 4: fragment=listViewFragment;title="ListView";   break;
+            case 5: fragment=radioButtonFragment;title="Radio Buttons";  break;
+            case 6: fragment=toggleButtonFragment;title="Toggle Button";  break;
+            case 7: fragment=ratingBarFragment;title="Rating Bar";  break;
+            case 8: fragment=spinnerFragment;title="Spinner" ; break;
+            case 9: fragment=datePickerFragment;title="Date Picker"; break;
+            case 10: fragment=timePickerFragment;title="Time Picker";  break;
+            case 11: fragment=analogAndDigitalClockFragment;title="Analog And Digital Clock";  break;
+            case 12: fragment=processBarFragment;title="ProcessBar";  break;
+            case 13: fragment=alartDialogFragment;title="Alart Dialog" ; break;
+            case 14: fragment=promptDialogFragment; title="Prompt Dialog";  break;
+            case 15: fragment=toastNotificationFragment;title="Toast Notification";  break;
+            case 16: fragment=imageViewFragment;title="ImageView";  break;
+            case 17: fragment=imageButtonFragment; title="ImageButton";  break;
+            case 18: fragment= linearLayoutFragment_vertical;  title="LinearLayoutVertical";  break;
+            case 19: fragment= linearLayoutFragment_horizontal; title="LinearLayoutHorizontal";  break;
+            case 20: fragment=relativeLayoutFragment;  title="RelativeLayout";  break;
+            case 21: fragment=tableLayoutFragment; title="TableLayout";   break;
+            case 22: fragment=gridViewFragment; title="GridView";  break;
+            case 23: fragment=webViewFragment; title="WebView";   break;
 
-            case 100:fragment=listViewMain; title="Button"; break;
-            default: fragment=listViewMain; break;
+            case 100:fragment=listViewMain; title="ExampleAndroid"; break;
+            default: fragment=listViewMain; title="ExampleAndroid"; break;
         }
 
         selected=selectfr;
@@ -190,8 +190,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void RunFragment(Fragment fragment) {
-
-
 
             FragmentManager fmgr = getSupportFragmentManager();
 
