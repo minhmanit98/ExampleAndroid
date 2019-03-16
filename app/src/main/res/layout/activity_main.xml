@@ -5,24 +5,6 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/button2"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:fontFamily="@font/changa_one"
-            android:text="Show Code"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
     <FrameLayout
 
         android:id="@+id/container_body"

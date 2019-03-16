@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     ShowCodeFragment showCodeFragment=new ShowCodeFragment();
 
 
-    Button button2;
+
     String title="ExampleAndroid";
     public static int selected=100;
     @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        button2=(Button) findViewById(R.id.button2);
+
         RunFragment(listViewMain);
 //        initFragment(100);
 //        if(selected==100){
